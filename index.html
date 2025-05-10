@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<!-- шрифт -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            manrope: ['"Manrope"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+
+
+
+<body style = "background-color: #06030F">
+
+    <header class="font-manrope text-white px-6 py-2 text-sm w-[1920px] h-[157px] border-b border-b-[1px] border-b-[rgba(19, 16, 27, 1)]">
+
+        <!-- Верхняя строка -->
+        
+        <!-- меню верхней строки -->
+          <div class = "flex justify-center gap-6 text-[16px] font-bold absolute top-[19px] left-[470px]">
+            <p class = "mr-24">Накопительный счёт</p>
+            <p>Отзывы</p>
+            <p>Гарантии</p>
+            <p>Как купить</p>
+            <p>Накопительная</p>
+            <p>Заработай</p>
+
+
+            <p class = "ml-32">Hanzed Rules</p>
+            <button class = "rounded-full w-[34px] h-[34px] border-[2px] border-[rgba(119, 190, 29, 1)] overflow-hidden">
+              <img src = "menu/80859ffc7a04e0dbb3b4381ee206cb7af264d96f (1).jpg" class = "w- h-5 object-cover"/>
+            </button>
+          </div>
+          
+
+
+
+
+      
+      
+         
+      
+
+        <!-- Нижняя строка -->
+        <div>
+            <p class="absolute top-[89px] left-[1353px] w-[84px] h-[21px] text-[16px] text-[rgba(119,190,29,1)]">Бесплатно</p>
+            <!-- лого + название -->
+            <div>
+            <img src = "menu/image 910.svg" class = "absolute top-[81px] left-[330px] w-[33px] h-[33px]">
+            <p class = "absolute top-[85px] left-[374px] w-[154px] h-[29px] text-[32px] font-bold">Playnchill</p>
+            </div>
+
+        <div class="flex items-center justify-between">
+          <!-- поиск -->
+            <div>
+            <input type="text" placeholder="Поиск" 
+                 class="absolute top-[67px] left-[645px] w-[648px] h-[66px] bg-[rgba(196,196,196,0.05)] text-white px-2 py-1 rounded-[15px] outline-none pl-[20px]" />
+            </div>
+            <div class = "absolute top-[88px] left-[1497px] w-[26px] h-[21px]">
+                <img src = "menu/Vector 3063 (Stroke).svg">
+            </div>
+            <div class = "absolute top-[86px] left-[1548px] w-[24px] h-[25px]">
+                <img src = "menu/Vector (2).svg">
+            </div>
+            <div class = "absolute top-[96px] left-[588px] w-[22px] h-[8px]"> 
+                <img src = "menu/Group 5287.svg">
+            </div>
+        </div>
+        
+
+          
+    </header>
+
+    <section class="absolute z-40" style="top:197px; left:330px; width:1260px; height:700px;">
+      <div class="relative w-full h-full overflow-hidden">
+        <div id="carousel" class="flex transition-transform duration-700 ease-in-out h-full">
+          
+          <!-- Слайд 1 -->
+          <div class="min-w-[80%] mx-4 shrink-0 relative rounded-xl overflow-hidden shadow-xl h-full">
+            <img src="menu/k1.jpg" class="w-full h-full object-cover brightness-75 rounded-xl" />
+          </div>
+          
+          <!-- Слайд 2 -->
+          <div class="min-w-[80%] mx-4 shrink-0 relative rounded-xl overflow-hidden shadow-xl h-full">
+            <img src="menu/k2.jpg" class="w-full h-full object-cover brightness-75 rounded-xl" />
+          </div>
+    
+          <!-- Слайд 3 -->
+          <div class="min-w-[80%] mx-4 shrink-0 relative rounded-xl overflow-hidden shadow-xl h-full">
+            <img src="menu/k3.jpg" class="w-full h-full object-cover brightness-75 rounded-xl" />
+          </div>
+    
+        </div>
+    
+        <!-- Кнопки -->
+        <button onclick="prevSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/30 hover:bg-white/50 text-white text-2xl p-2 rounded-full">
+          ‹
+        </button>
+        <button onclick="nextSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/30 hover:bg-white/50 text-white text-2xl p-2 rounded-full">
+          ›
+        </button>
+      </div>
+    </section>
+    
+    <script>
+      const carousel = document.getElementById('carousel');
+      let currentIndex = 0;
+    
+      function updateCarousel() {
+        const slideWidth = carousel.children[0].offsetWidth + 32; // 32 = mx-4*2
+        carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+      }
+    
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % carousel.children.length;
+        updateCarousel();
+      }
+    
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + carousel.children.length) % carousel.children.length;
+        updateCarousel();
+      }
+    
+      window.addEventListener("load", updateCarousel);
+    </script>
+    </section>
+
+
+    <div>
+      <img src = "menu/Топ 4.svg" class= "absolute top-[997px] left-[330px] width-[81px] height-[42px]">
+      <img src = "menu/Vector (1).svg" class = "absolute top-[1007px] left-[421px] widht-[17px] height-[22px]" >
+    </div>
+    <!-- Общий контейнер для карточек -->
+    <div class="absolute top-[1059px] left-[330px] w-[1260px] h-[642px] z-20 flex gap-6 font-manrope">
+
+      <!-- Карточка 1 -->
+      <div class= "rounded-xl overflow-hidden bg-[#06030F]">
+        <img src="menu/Rectangle 3313.svg" class="w-[300px] h-[450px] object-cover rounded-xl" />
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+            <span class="text-[#77BE1D] text-[18px]">-15%</span>
+            <span class="text-[#3D394A] text-[18px]">16400 P</span>
+          </div>
+          <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+          <div class="text-xs text-gray-500">
+            <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 2 -->
+      <div class= "rounded-xl overflow-hidden bg-[#06030F]">
+        <img src="menu/Rectangle 3313.svg" class="w-[300px] h-[450px] object-cover rounded-xl" />
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+            <span class="text-[#77BE1D] text-[18px]">-15%</span>
+            <span class="text-[#3D394A] text-[18px]">16400 P</span>
+          </div>
+          <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+          <div class="text-xs text-gray-500">
+            <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Карточка 3 -->
+      <div class= "rounded-xl overflow-hidden bg-[#06030F]">
+        <img src="menu/Rectangle 3313.svg" class="w-[300px] h-[450px] object-cover rounded-xl" />
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+            <span class="text-[#77BE1D] text-[18px]">-15%</span>
+            <span class="text-[#3D394A] text-[18px]">16400 P</span>
+          </div>
+          <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+          <div class="text-xs text-gray-500">
+            <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+          </div>
+        </div>
+      </div>
+      <!-- Карточка 4 -->
+      <div class=" rounded-xl overflow-hidden bg-[#06030F]">
+        <img src="menu/Rectangle 3313.svg" class="w-[300px] h-[450px] object-cover rounded-xl" />
+        <div class="p-3">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+            <span class="text-[#77BE1D] text-[18px]">-15%</span>
+            <span class="text-[#3D394A] text-[18px]">16400 P</span>
+          </div>
+          <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+          <div class="text-xs text-gray-500">
+            <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- карточки по майнкрафту -->
+  <div class ="absolute top-[1729px] left-[330px] w-[620px] h-[350px] bg-gradient-to-r from-[#1DBE53] to-[#ACE238] rounded-[15px]"></div>
+  <img src="menu/крипер2004.svg" class="absolute top-[1675px] left-[674px] w-[262px] h-[374px] z-[100]">
+  <p class = "absolute top-[1769px] left-[370px] font-manrope w-[379px] text-[36px] text-[#FFFFFF] font-bold leading-tight">Играй уже сейчас в<br />Minecraft</p>
+  
+  <div>
+    <p class = "absolute top-[1875px] left-[370px] w-[85px] h-[31px] font-manrope text-[#FFFFFF] font-bold text-[24px]">4 999 P</p>
+    <p class = "absolute top-[1878px] left-[475px] w-[85px] h-[31px] font-manrope text-[#FFE817] font-bold text-[20px]">-25%</p>
+    <p class = "absolute top-[1878px] left-[546px] w-[71px] h-[26px] font-manrope text-[#FFFFFF80] font-bold text-[20px]">6 999 P</p>
+  </div>
+  <button class="absolute top-[1986px] left-[370px] w-[144px] h-[64px] rounded-[15px] text-center text-[#FFFFFF] text-[18px] bg-[#FFFFFF1A]">
+   Купить
+  </button>
+  <button class="absolute top-[2006px] left-[532px] text-center text-[#FFFFFF] text-[18px]">
+   В избранное
+   </button>
+</div>
+<!-- вторая -->
+<div class ="absolute top-[1729px] left-[970px] w-[620px] h-[350px] bg-gradient-to-r from-[#FF3D23] to-[#FDA828] rounded-[15px]"></div>
+  <img src="menu/данженс.png" class="absolute top-[1686px] left-[1300px] w-[450px] h-[403px] z-[100]">
+  <p class = "absolute top-[1769px] left-[1010px] font-manrope w-[379px] text-[36px] text-[#FFFFFF] font-bold leading-tight z-[100]">Играй уже сейчас в<br />Minecraft Dungeons</p>
+
+  <div>
+    <p class = "absolute top-[1875px] left-[1010px] w-[85px] h-[31px] font-manrope text-[#FFFFFF] font-bold text-[24px]">4 999 P</p>
+    <p class = "absolute top-[1878px] left-[1115px] w-[85px] h-[31px] font-manrope text-[#FFE817] font-bold text-[20px]">-25%</p>
+    <p class = "absolute top-[1878px] left-[1186px] w-[71px] h-[26px] font-manrope text-[#FFFFFF80] font-bold text-[20px]">6 999 P</p>
+  </div>
+  <button class="absolute top-[1986px] left-[1010px] w-[144px] h-[64px] rounded-[15px] text-center text-[#FFFFFF] text-[18px] bg-[#FFFFFF1A]">
+   Купить
+  </button>
+  <button class="absolute top-[2006px] left-[1172px] text-center text-[#FFFFFF] text-[18px]">
+   В избранное
+   </button>
+</div>
+
+<div class = "text-[20px]">
+  <p class = "absolute top-[2169px] left-[330px] w-[83px] h-[26px]">Новинки</p>
+  <p class = "absolute top-[2169px] left-[443px] w-[91px] h-[26px]">Аккаунты</p>
+  <p class = "absolute top-[2169px] left-[564px] w-[63px] h-[26px]">Ключи</p>
+  <p class = "absolute top-[2169px] left-[657px] w-[103px] h-[26px]">Активация</p>
+  <p class = "absolute top-[2169px] left-[790px] w-[93px] h-[26px]">Прокачка</p>
+
+</div>
+<div>
+
+  <!-- Карточка 2 -->
+  <div class="absolute top-[2255px] left-[330px] rounded-[15px] overflow-hidden bg-[#06030F]">
+    <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+    <div class="p-3">
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+        <span class="text-[#77BE1D] text-[18px]">-15%</span>
+        <span class="text-[#3D394A] text-[18px]">16400 P</span>
+      </div>
+      <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+      <div class="text-xs text-gray-500">
+        <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="absolute top-[2255px] left-[650px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[2255px] left-[970px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[2255px] left-[1290px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[2845px] left-[330px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[2845px] left-[650px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[2845px] left-[970px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[2845px] left-[1290px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[3435px] left-[330px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[3435px] left-[650px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[3435px] left-[970px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="absolute top-[3435px] left-[1290px] rounded-[15px] overflow-hidden bg-[#06030F]">
+  <img src="menu/Rectangle 3313.svg" class="h-[400px] w-[300px] object-cover rounded-xl" />
+  <div class="p-3">
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+      <span class="text-[#77BE1D] text-[18px]">-15%</span>
+      <span class="text-[#3D394A] text-[18px]">16400 P</span>
+    </div>
+    <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+    <div class="text-xs text-gray-500">
+      <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class = "absolute top-[4005px] left-[330px] w-[1260px] h-[76px] border-[2px] border-[#FFFFFF1A] rounded-[15px] flex items-center justify-center">
+  <p class = "font-manrope text-[18px] text-[#366EDC]">Перейти в каталог</p> 
+</div>
+
+<div class = "w-[1260px] h-[1056px]">
+  <p class = "absolute w-[280px] h-[42px] top-[4161px] left-[330px]">Акции и скидки</p>
+  
+  <div class="absolute top-[4223px] left-[330px] rounded-[15px] overflow-hidden bg-[#06030F]">
+    <img src="menu/Rectangle 3313.svg" class="h-[319px] w-[620px] object-cover rounded-[15px]" />
+    <div class="p-3">
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+        <span class="text-[#77BE1D] text-[18px]">-15%</span>
+        <span class="text-[#3D394A] text-[18px]">16400 P</span>
+      </div>
+      <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+      <div class="text-xs text-gray-500">
+        <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="absolute top-[4223px] left-[970px] rounded-[15px] overflow-hidden bg-[#06030F]">
+    <img src="menu/Rectangle 3313.svg" class="h-[319px] w-[620px] object-cover rounded-[15px]" />
+    <div class="p-3">
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+        <span class="text-[#77BE1D] text-[18px]">-15%</span>
+        <span class="text-[#3D394A] text-[18px]">16400 P</span>
+      </div>
+      <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+      <div class="text-xs text-gray-500">
+        <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="absolute top-[4753px] left-[330px] rounded-[15px] overflow-hidden bg-[#06030F]">
+    <img src="menu/Rectangle 3313.svg" class="h-[319px] w-[620px] object-cover rounded-[15px]" />
+    <div class="p-3">
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+        <span class="text-[#77BE1D] text-[18px]">-15%</span>
+        <span class="text-[#3D394A] text-[18px]">16400 P</span>
+      </div>
+      <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+      <div class="text-xs text-gray-500">
+        <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="absolute top-[4753px] left-[970px] rounded-[15px] overflow-hidden bg-[#06030F]">
+    <img src="menu/Rectangle 3313.svg" class="w-[620px] h-[319px] object-cover rounded-[15px]" />
+    <div class="p-3">
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-[#FFFFFF] text-[24px]">16 400 P</span>
+        <span class="text-[#77BE1D] text-[18px]">-15%</span>
+        <span class="text-[#3D394A] text-[18px]">16400 P</span>
+      </div>
+      <p class="text-sm text-gray-300 mb-1">Minecraft</p>
+      <div class="text-xs text-gray-500">
+        <span class="mx-2">•</span><span>Буст</span><span class="mx-2">•</span><span>Origin</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+<div class = "absolute top-[5286px] left-[330px] w-[1260px] h-[150px]">
+<img src = "menu/Cola.svg">
+</div>
+
+<div>
+
+
+
+<div class = "absolute top-[5567px] left-[330px] w-[407px] h-[409px] ">
+<img src = "menu/news.svg">
+</div>
+
+<div class = "absolute top-[5567px] left-[757px] w-[407px] h-[409px] ">
+  <img src = "menu/news.svg">
+  </div>
+
+  <div class = "absolute top-[5567px] left-[1184px] w-[407px] h-[409px] ">
+    <img src = "menu/news.svg">
+    </div>
+
+
+<div class = "absolute top-[6016px] left-[330px] w-[1260px] h-[76px] border-[2px] border-[#FFFFFF1A] rounded-[15px] flex items-center justify-center">
+  <p class = "font-manrope text-[18px] text-[#366EDC]">Все публикации</p> 
+</div>
+
+<div class = "absolute top-[6163.97px] left-[330px] w-[1260px] h-[274.05px]">
+
+
+</div>
+
+<footer class = "w-[1920px] h-[744px] absolute top-[6518px] left-[-2px]">
+<img src = "menu/money.svg" class = "absolute top-[80px] left-[330px]">
+
+<div class = "absolute top-[180px] left-[330px] w-[127px] h-[173px]">
+  <p>О компании</p>
+  <p>О компании</p>
+  <p>О компании</p>
+</div>
+
+</footer>
+
+</body>
+</html>
